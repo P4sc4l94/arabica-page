@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabica Coffee | Home</title>
+  <!-- FOR FAVICON -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Install jQuery via CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.min.css">
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7334f54e3a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- <nav class="main-nav">
+    <div class="main-nav__nav-section main-nav__logo">
+      <img src="img/logo-white.svg" alt="Arabica Premium Coffee">
+    </div>
+    <div class="main-nav__nav-section main-nav__navigation">
+      <div class="subnav">
+        <button class="subnav__btn">Shop <i class="fas fa-caret-down"></i></button>
+        <div class="subnav__content">
+          <a href="/">Shop Online</a>
+          <a href="/">All Products</a>
+          <a href="/">Subscribe & Save</a>
+          <a href="/">Wholesale</a>
+          <a href="/">Coffee Beans</a>
+          <a href="/">Coffee Drinks</a>
+          <a href="/">Chocolate</a>
+          <a href="/">Souvenirs & Swag</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnav__btn">About Us <i class="fas fa-caret-down"></i></button>
+        <div class="subnav__content">
+          <a href="/">Company </a>
+          <a href="/">History</a>
+          <a href="/">Facilities</a>
+          <a href="/">Certifications</a>
+          <a href="/">FAQ</a>
+          <a href="/">Our Crew</a>
+          <a href="/">Our Blog</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnav__btn">Locations <i class="fas fa-caret-down"></i></button>
+        <div class="subnav__content">
+          <a href="/">Retailers Near You</a>
+          <a href="/">Arabica Stores</a>
+          <a href="/">Factory Locations</a>
+        </div>
+      </div>
+      <a href="/" class="main-nav__nav-link">Contact Us</a>
+    </div>
+    <div class="main-nav__nav-section main-nav__search">
+      <input type="text" placeholder="Search..." />
+    </div>
+    <div class="main-nav__nav-section main-nav__user-opt">
+      <i class="fas fa-user-circle"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </nav> -->
+  <nav class="top-nav__mobile" id="mobileNav">
+    <div class="mobile-menu__flex">
+      <div class="main-nav__nav-section main-nav__logo">
+        <img src="img/logo-white.svg" alt="Arabica Premium Coffee">
+      </div>
+      <button title="Menu" onclick="openMobile()" class="mobile-menu__btn"><i class="fas fa-bars"></i> Menu</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMobile()">&times;</a>
+      <div class="mobile-menu__content">
+        <div class="mobile-menu__user-opt">
+          <a href="#" title="Visit your account"><i class="fas fa-user-circle"></i> Account</a>
+          <a href="#" title="View your cart"><i class="fas fa-shopping-bag"></i> Cart</a>
+        </div>
+        <label for="search" class="sr-only">Search</label>
+        <input name="search" type="text" placeholder="Search..." class="mobile-nav__searchbar" aria-label="Searchbox"/>
+        <a href="#">Shop</a>
+        <a href="#">Locations</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <nav class="top-nav" id="topNav">
+    <div class="main-nav__nav-section main-nav__logo">
+      <img src="img/logo-white.svg" alt="Arabica Premium Coffee">
+    </div>
+    <button class="top-nav__btn top-nav__menu-btn" title="Shop" onclick="openShop()"><span class="top-nav__menu-btn__desktop">Shop</span><span class="top-nav__menu-btn__mobile"><i class="fa-solid fa-angle-down"></i></span></button>
+    <div id="shop-menu" class="top-nav__menu-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeShop()">&times;</a> 
+      <div class="top-nav__menu">
+        <a href="/">Shop Online</a>
+        <a href="/">All Products</a>
+        <a href="/">Subscribe & Save</a>
+        <a href="/">Wholesale</a>
+        <a href="/">Coffee Beans</a>
+        <a href="/">Coffee Drinks</a>
+        <a href="/">Chocolate</a>
+        <a href="/">Souvenirs & Swag</a>
+      </div>
+    </div>
+    <button class="top-nav__btn top-nav__menu-btn" title="Locations" onclick="openLocation()"><span class="top-nav__menu-btn__desktop">Locations</span><span class="top-nav__menu-btn__mobile"><i class="fa-solid fa-angle-down"></i></span></button>
+    <div id="location-menu" class="top-nav__menu-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeLocation()">&times;</a> 
+      <div class="top-nav__menu">
+        <a href="/">Retailers Near You</a>
+        <a href="/">Arabica Stores</a>
+        <a href="/">Factory Locations</a>
+      </div>
+    </div> 
+    <button class="top-nav__btn top-nav__menu-btn" title="About Us" onclick="openAbout()"><span class="top-nav__menu-btn__desktop">About Us</span><span class="top-nav__menu-btn__mobile"><i class="fa-solid fa-angle-down"></i></span></button>
+    <div id="about-menu" class="top-nav__menu-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeAbout()">&times;</a> 
+      <div class="top-nav__menu">
+        <a href="/">Company </a>
+        <a href="/">History</a>
+        <a href="/">Facilities</a>
+        <a href="/">Certifications</a>
+        <a href="/">FAQ</a>
+        <a href="/">Our Crew</a>
+        <a href="/">Our Blog</a>
+      </div>
+    </div>
+    <button class="top-nav__btn top-nav__menu-btn" title="Contact Us" onclick="openContact()"><span class="top-nav__menu-btn__desktop">Contact Us</span><span class="top-nav__menu-btn__mobile"><i class="fa-solid fa-angle-down"></i></span></button>
+    <div id="contact-menu" class="top-nav__menu-overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeContact()">&times;</a> 
+      <div class="top-nav__menu">
+        <a href="/">Order Status</a>
+        <a href="/">Customer Support</a>
+        <a href="/">Technical Support</a>
+        <a href="/">Returns</a>
+      </div>
+    </div>
+    
+    <button class="top-nav__btn top-nav__search-btn" title="Search Button" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+    <label for="search" class="sr-only">Search</label>
+    <input name="search" type="text" placeholder="Search..." class="top-nav__searchbar" id="searchBar" aria-label="Searchbox"/>
+    <div class="top-nav__user-opt">
+      <a href="#" title="Visit your account"><i class="fas fa-user-circle"></i></a>
+      <a href="#" title="View your cart"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+  </nav>
+  <header class="header">
+    <!-- <div class="paper-nav-bottom"><img src="img/paper-tear-dark-brown-1450w.png" alt=""></div> -->
+    <div class="paper-bottom bottom-adjust"><img src="img/paper-tear-white-2500w.png" alt="" /></div>
+    <div class="header__container">
+      <h1 class="sr-only">Arabica Premium Coffee</h1>
+      <h2 class="header__heading">The very best. <br/>Just for you.</h2>
+      <p class="header__copy">Subscribe and save to get the very best coffee deals our store has to offer.</p>
+      <a class="btn btn--red btn__header" href="/">Start Saving!</a>
+    </div>
+  </header>
+  <main>
+    <section class="products">
+      <h2 class="sr-only">Our Featured Products</h2>
+      <div class="products__container">
+        <div id="scroll-feature" class="horiz-scroll">
+          <div class="scroller">
+            <div class="left-scroll invisible">
+              <p><img src="img/left-arrow.png" alt="left scroll arrow" style="width:75%;height:auto;"></p>
+            </div>
+            <div class="scroll-btn right-scroll">
+              <p><img src="img/right-arrow.png" alt="right scroll arrow" style="width:75%;height:auto;"></p>
+            </div>
+            <div class="scroll-images scrollable-x">
+              <button class="products__items">
+                <img src="img/product-1-milk-bottle-vanilla-600x600.png" alt="Vanilla Coffee" />
+                <p><span class="products__title">Arabica Coffee &mdash; Vanilla</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+                <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+              </button>
+              <button class="products__items">
+                <img src="img/product-2-milk-bottle-mint-600x600.png" alt="Mint Chocolate Coffee" />
+                <p><span class="products__title">Arabica Coffee &mdash; Mint Chocolate</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+                <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+              </button>
+              <button class="products__items">
+                <img src="img/product-3-milk-bottle-original-600x600.png" alt="Arabica Original Coffee" />
+                <p><span class="products__title">Arabica Coffee &mdash; Original</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+                <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+              </button>
+              <button class="products__items">
+                <img src="img/product-4-milk-bottle-blueberry-600x600.png" alt="Blueberry Coffee" />
+                <p><span class="products__title">Arabica Coffee &mdash; Blueberry</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+                <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+              </button> 
+               </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="products__container">
+        <h2 class="sr-only">Our Featured Products</h2>
+        <button class="products__items">
+          <img src="img/product-1-milk-bottle-vanilla-600x600.png" alt="Vanilla Coffee"/>
+          <p><span class="products__title">Arabica Coffee &mdash; Vanilla</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+          <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+        </button>
+        <button class="products__items">
+          <img src="img/product-2-milk-bottle-mint-600x600.png" alt="Mint Chocolate Coffee"/>
+          <p><span class="products__title">Arabica Coffee &mdash; Mint Chocolate</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+          <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+        </button>
+        <button class="products__items">
+          <img src="img/product-3-milk-bottle-original-600x600.png" alt="Arabica Original Coffee"/>
+          <p><span class="products__title">Arabica Coffee &mdash; Original</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+          <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+        </button>
+        <button class="products__items">
+          <img src="img/product-4-milk-bottle-blueberry-600x600.png" alt="Blueberry Coffee"/>
+          <p><span class="products__title">Arabica Coffee &mdash; Blueberry</span> <br/><span class="products__size">16oz. bottle</span> <br/><span class="products__price">from $4.25 USD</span></p>
+          <p class="products__diet-descr">Dairy Free | Non-GMO | Low Sugar</p>
+        </button>
+      </div> -->
+    </section>
+    <section class="our-promise fade">
+      <div class="paper-top"><img src="img/paper-tear-white-1530w.png" alt="" /></div>
+      <div class="paper-bottom"><img src="img/paper-tear-white-1530w.png" alt="" /></div>
+      <div class="fade">
+        <div class="our-promise__container">
+          <h2 class="our-promise__header">Our promise to you</h2>
+          <p class="our-promise__copy">Our products are made with the finest, ethically sourced ingredients, with options to fit your dietary needs.</p>
+          <p class="our-promise__copy">Don't believe us? Check out our nutrition information!</p>
+          <a class="btn btn--brown" href="/">View Nutrition Details</a>
+        </div>
+      </div>
+    </section>
+    <section class="our-story">
+      <div class="our-story__container">
+        <div class="our-story__img">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/our-story-founder-img-tablet.jpg">
+            <source media="(min-width: 992x)" srcset="img/our-story-founder-img-desktop.jpg">
+            <img src="img/our-story-founder-img-phone.jpg" alt="Our Founder">
+          </picture> 
+          <!-- <img src="img/our-story-founder-img.png" alt="Our Founder"/> -->
+        </div>
+        <div class="our-story__copy">
+          <h2>Our Story</h2>
+          <p>How did we get here? Where are we headed? From humble beginnings as a local Colombian farmer, to a leader whose founding principles are <b>Freshness, Fairness, and Equality</b>.</p>
+          <p>Read our founder's story and discover what's in store for the future.</p>
+          <a href="/" class="btn btn--outline">Read Our Story</a>
+        </div>
+      </div>
+    </section>
+    <section class="our-goals">
+      <h2>Our Goals</h2>
+      <div class="our-goals__container">
+        <div class="our-goals__container-item">
+          <img src="img/goals-1-community.jpg" alt=""/>
+          <p>Improve the well-being of our local community</p>
+        </div>
+        <div class="our-goals__container-item">
+          <img src="img/goals-2-environment.jpg" alt=""/>
+          <p>Raise awareness for how businesses can support the environment</p>
+        </div>
+        <div class="our-goals__container-item">
+          <img src="img/goals-3-equality.jpg" alt=""/>
+          <p>Encourage equality in international trade</p>
+        </div>
+      </div>
+    </section>
+    <section class="giving-back">
+      <div class="giving-back__container">
+        <h2>Giving Back</h2>
+        <p>Our company whats to do what it can to give back. But we also believe in supporting those who make it their mission to aid the environment and sustainability efforts of others.</p>
+        <a href="/" class="btn btn--outline">Learn More</a>
+        <div class="giving-back__logos-container">
+          <div class="giving-back__logos-item">
+            <img src="img/logo-1-conservation.png" alt=""/>
+          </div>
+          <div class="giving-back__logos-item">
+            <img src="img/logo-2-rainforest.png" alt=""/>
+          </div>
+          <div class="giving-back__logos-item">
+            <img src="img/logo-3-fair-trade.png" alt=""/>
+          </div>
+          <div class="giving-back__logos-item">
+            <img src="img/logo-4-living-waters.png" alt=""/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="map">
+      <div class="paper-top"><img src="img/paper-tear-white-thin-1530w.png" alt="" /></div>
+      <div class="paper-bottom"><img src="img/paper-tear-white-thin-1530w.png" alt="" /></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d104605.9588546684!2d-122.43458814203342!3d37.78938098529307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scoffee%20san%20francisco!5e0!3m2!1sen!2sus!4v1669664675187!5m2!1sen!2sus" class="map__embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="commitment">
+      <div class="commitment__container">
+        <div class="commitment__statement">
+          <div class="commitment__img"><img src="img/clean-commitment-hand-heart-600w.png" alt=""></div>
+          <div class="commitment__copy">
+            <h2>Our Clean Commitment</h2>
+            <p>Read our company's 10 year action plan about our commitment to make Arabica Premium Coffee 100% green and <b>Farmer First</b>.</p>
+            <a href="/" class="link link--red">Read Plan <span style="display:inline-block;rotate:-45deg;"><i class="far fa-arrow-alt-circle-right"></i></span></a>
+          </div>
+        </div>
+        <div class="latest-news">
+          <p class="lastest-news__fade-header">What's New</p>
+          <h2>Here's the Latest</h2>
+          <div class="latest-news--padding">
+            <article class="latest-news__item">
+              <h3>An Interview With Our Coffee Byer</h3>
+              <p>This World Fair Trade Day, find out how Arabica's Coffee Buyer, Matt McDonald, discovered his passion for coffee and why he chose to work for a pioneering fairtrade coffee company.</p>
+              <a href="/" class="link link--green">Read More <span style="display:inline-block;rotate:-45deg;"><i class="far fa-arrow-alt-circle-right"></i></span></a>
+            </article>
+            <hr/>
+            <article class="latest-news__item">
+              <h3>We Feed The World</h3>
+              <p>Arabica Premium Coffee is a proud sponsor of the international photography exhibition, "We Feed the World".</p>
+              <a href="/" class="link link--green">Read More <span style="display:inline-block;rotate:-45deg;"><i class="far fa-arrow-alt-circle-right"></i></span></a>
+            </article>
+            <div class="latest-news__more-stories-container">
+              <img src="img/swivel.svg" alt=""/>
+              <a href="/" class="link link--brown">Read more Stories <span style="display:inline-block;rotate:-45deg;"><i class="far fa-arrow-alt-circle-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </section>
+    <section class="contact-us">
+      <div class="paper-rev-bottom contact-us__paper">
+        <img src="img/paper-tear-dark-brown-1450w.png" alt=""/>
+      </div>
+      <div class="contact-us__container">
+        <img src="img/purple-swirl.png" alt=""/>
+        <h2>Drop us a Line</h2>
+        <p>If you have any questions or concerns, please contact us!</p>
+        <a href="/" class="btn btn--red">Contact Form</a>
+        <p>Or, contact our Support Center at:</p>
+        <div class="contact-us__contact-info"><a href="/">support.arabica-premium.com</a> <a href="/">support@arabica.com</a> <a href="/">208.455.5833</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__flex-container">
+      <div class="footer__content footer__info">
+        <img src="img/logo-white.svg" alt="Arabica Logo"/>
+        <p class="footer__address">1523 Market St, Suite 120 <br/>San Francisco, CA 94118</p>
+        <p class="footer__social-media"><i class="fab fa-facebook-square" title="Follow us on Facebook"></i> <i class="fab fa-instagram-square" title="Follow us on Instagram"></i> <i class="fab fa-linkedin" title="Connect on LinkedIn"></i> <i class="fab fa-twitter-square" title="Follow us on Twitter"></i></p>
+      </div>
+      <div class="footer__content footer__redundant-nav footer__nav-mobile" aria-label="Footer Navigation">
+        <button id="shop" class="footer-nav__btn"><span>Shop</span></button>
+        <div class="panel shop-panel">
+          <a href="#">Shop Online</a>
+          <a href="#">All Products</a>
+          <a href="#">Subscribe & Save</a>
+          <a href="#">Wholesale</a>
+          <a href="#">Coffee Beans</a>
+          <a href="#">Coffee Drinks</a>
+          <a href="#">Chocolate</a>
+          <a href="#">Souvenirs & Swag</a>
+        </div>
+        <button id="location" class="footer-nav__btn"><span>Locations</span></button>
+        <div class="panel location-panel">
+          <a href="#">Retailers Near You</a>
+          <a href="#">Arabica Stores</a>
+          <a href="#">Factory Locations</a>
+        </div>
+        <button id="about" class="footer-nav__btn"><span>About Us</span></button>
+        <div class="panel about-panel">
+          <a href="#">Company </a>
+          <a href="#">History</a>
+          <a href="#">Facilities</a>
+          <a href="#">Certifications</a>
+          <a href="#">FAQ</a>
+          <a href="#">Our Crew</a>
+          <a href="#">Our Blog</a>
+        </div>
+        <button id="contact" class="footer-nav__btn"><span>Contact Us</span></button>
+        <div class="panel contact-panel">
+          <a href="#">Order Status</a>
+          <a href="#">Customer Support</a>
+          <a href="#">Technical Support</a>
+          <a href="#">Returns</a>
+        </div>
+      </div>
+      <div class="footer__content footer__redundant-nav footer__nav-desktop" aria-label="Footer Navigation">
+        <div class="footer__nav-desktop-item">
+          <p>Shop</p>
+          <div class="footer__nav-desktop-links">
+            <a href="#">Shop Online</a>
+            <a href="#">All Products</a>
+            <a href="#">Subscribe & Save</a>
+            <a href="#">Wholesale</a>
+            <a href="#">Coffee Beans</a>
+            <a href="#">Coffee Drinks</a>
+            <a href="#">Chocolate</a>
+            <a href="#">Souvenirs & Swag</a>
+          </div>
+        </div>
+        <div class="footer__nav-desktop-item">
+          <p>Locations</p>
+          <div class="footer__nav-desktop-links">
+            <a href="#">Retailers Near You</a>
+            <a href="#">Arabica Stores</a>
+            <a href="#">Factory Locations</a>
+          </div>
+        </div>
+        <div class="footer__nav-desktop-item">
+          <p>About Us</p>
+          <div class="footer__nav-desktop-links">
+            <a href="#">Company </a>
+            <a href="#">History</a>
+            <a href="#">Facilities</a>
+            <a href="#">Certifications</a>
+            <a href="#">FAQ</a>
+            <a href="#">Our Crew</a>
+            <a href="#">Our Blog</a>
+          </div>
+        </div>
+        <div class="footer__nav-desktop-item">
+          <p>Contact Us</p>
+          <div class="footer__nav-desktop-links">
+            <a href="#">Order Status</a>
+            <a href="#">Customer Support</a>
+            <a href="#">Technical Support</a>
+            <a href="#">Returns</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p><a href="/">Accessibility</a> | <a href="/">100% Guarantee</a> | <a href="/">Terms</a> | <a href="/">Privacy</a> | <a href="/">Do Not Sell My PI</a></p>
+      <p>Arabica Premium Coffee | Copyright 2019 | All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/toggleNav.min.js"></script> 
+<script src="js/scroll.min.js"></script>
+<script src="js/redundantNav.min.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
