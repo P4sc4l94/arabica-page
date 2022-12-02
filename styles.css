@@ -32,7 +32,7 @@ body {
   font-family: "Source Sans Pro", "Helvetica", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
-  margin: 0 auto;
+  margin: 0;
   max-width: 1440px;
   padding: 0;
 }
@@ -545,8 +545,8 @@ img {
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   display: inline-block;
-  font: bold 1.25rem/2rem "Source Sans Pro", Helvetica, sans-serif;
-  letter-spacing: 0.04rem;
+  font: bold 1rem/1.5rem "Source Sans Pro", Helvetica, sans-serif;
+  letter-spacing: 0;
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -556,6 +556,7 @@ img {
 @media screen and (min-width: 525px) {
   .btn {
     font-size: 1.5rem;
+    letter-spacing: 0.04rem;
   }
 }
 
@@ -769,9 +770,14 @@ header {
 }
 
 .header__heading {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   text-shadow: 2px 2px 4px #000000;
   text-transform: uppercase;
+}
+@media screen and (min-width: 576px) {
+  .header__heading {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .header__heading {
@@ -787,10 +793,16 @@ header {
 }
 
 .header__copy {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.03rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
+}
+@media screen and (min-width: 576px) {
+  .header__copy {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .header__copy {
@@ -1225,14 +1237,16 @@ p.products__diet-descr {
   }
 }
 .latest-news h2 {
+  font-size: 1.75rem;
   position: absolute;
+  top: -1.5rem;
   text-transform: uppercase;
-  top: 10px;
-  z-index: 1;
 }
 @media screen and (min-width: 576px) {
   .latest-news h2 {
     left: 50px;
+    top: 10px;
+    z-index: 1;
   }
 }
 @media screen and (min-width: 768px) {
